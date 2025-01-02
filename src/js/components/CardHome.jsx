@@ -7,8 +7,8 @@ const CardHome = ({seconds}) => {
 	const digits = seconds.toString().padStart(6, "0").split("");// Convertir segundos a dígitos
 	
   return (
-		  <div className="container mt-4" style={{ maxWidth: "1000px", background:"black", height: "50px",  display: "flex", alignItems: "center", justifyContent: "start", gap: "20px",padding: "20px" }} >
-        	  <div className="reloj" style={{ width: "50px", height: "50px", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "black", color: "white", fontSize: "50px"}}>
+		  <div className="container mt-4" style={{ Width: "1500px", background:"black", height: "50px",  display: "flex", alignItems: "center", justifyContent: "space-around", gap: "20px",padding: "20px" }} >
+        	  <div className="reloj" style={{ width: "40px", height: "50px", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "black", color: "white", fontSize: "50px"}}>
 	   			   <FontAwesomeIcon icon={faClock} />
 	   		    </div>
         {/* Mostrar los dígitos de los segundos, de última tarjeta a la primera */}
