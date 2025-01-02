@@ -1,28 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import CardHome from "./CardHome"; 
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+  const [seconds, setSeconds] = useState(0);
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+  /*Incrementar los segundos cada segundo*/
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((prevSeconds) => prevSeconds + 1); /* Aumentar segundos*/
+    }, 1000); /* Cada segundo*/
+
+    /* Limpiar el intervalo cuando el componente se desmonte*/
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      {/* Pasamos los segundos como prop a CardHome */}
+      <CardHome seconds={seconds} />
+    </>
+  );
 };
 
 export default Home;
